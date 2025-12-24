@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Notes & Reminders</title>
+
+    <!-- Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- Styles -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- ==========================
+         HEADER
+    ========================== -->
+    <header>
+        <div class="container">
+            <div class="header-content">
+                <div>
+                    <h1><i class="fas fa-graduation-cap"></i> Student Notes & Reminders</h1>
+                    <p class="subtitle">Stay organized with your notes and reminders</p>
+                </div>
+
+                <button class="notification-btn" id="notificationToggle">
+                    <i class="fas fa-bell"></i>
+                    <span class="notification-badge" id="notificationCount">0</span>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- ==========================
+         MAIN APP
+    ========================== -->
+    <div class="container">
+        <div class="app-container">
+
+            <!-- LEFT PANEL -->
+            <div class="left-panel">
+
+                <div class="panel">
+                    <h2 class="panel-title">
+                        <i class="fas fa-plus-circle"></i> Add New Note
+                    </h2>
+
+                    <form id="noteForm">
+                        <div class="form-group">
+                            <label for="noteTitle">Note Title</label>
+                            <input type="text" id="noteTitle" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="noteContent">Note Content</label>
+                            <textarea id="noteContent" required></textarea>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="noteCategory">Category</label>
+                            <select id="noteCategory">
+                                <option value="school">School</option>
+                                <option value="personal">Personal</option>
+                                <option value="work">Work</option>
+                                <option value="other">Other</option>
+                            </select>
+                        </div>
+
+                        <button type="submit" class="btn btn-primary">
+                            <i class="fas fa-save"></i> Save Note
+                        </button>
+                    </form>
+                </div>
+
+                <div class="panel">
+                    <h2 class="panel-title">
+                        <i class="fas fa-clock"></i> Add New Reminder
+                    </h2>
+
+                    <form id="reminderForm">
+                        <div class="form-group">
+                            <label for="reminderTitle">Reminder Title</label>
+                            <input type="text" id="reminderTitle" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="reminderDate">Reminder Date & Time</label>
+                            <input type="datetime-local" id="reminderDate" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="reminderCategory">Category</label>
+                            <select id="reminderCategory">
+                                <option value="school">School</option>
+                                <option value="personal">Personal</option>
+                                <option value="work">Work</option>
+                                <option value="other">Other</option>
+                            </select>
+                        </div>
+
+                        <button type="submit" class="btn btn-primary">
+                            <i class="fas fa-bell"></i> Set Reminder
+                        </button>
+                    </form>
+                </div>
+
+            </div>
+
+            <!-- RIGHT PANEL -->
+            <div class="right-panel">
+
+                <div class="panel">
+                    <h2 class="panel-title">
+                        <i class="fas fa-filter"></i> Filter by Category
+                    </h2>
+
+                    <div class="category-filters">
+                        <div class="category-filter active" data-category="all">All</div>
+                        <div class="category-filter" data-category="school">School</div>
+                        <div class="category-filter" data-category="personal">Personal</div>
+                        <div class="category-filter" data-category="work">Work</div>
+                        <div class="category-filter" data-category="other">Other</div>
+                    </div>
+                </div>
+
+                <div class="panel">
+                    <h2 class="panel-title">
+                        <i class="fas fa-sticky-note"></i> My Notes
+                    </h2>
+
+                    <div id="notesList" class="notes-list"></div>
+                    <div id="emptyNotes" class="empty-state hidden">
+                        <i class="fas fa-sticky-note"></i>
+                        <p>No notes yet.</p>
+                    </div>
+                </div>
+
+                <div class="panel">
+                    <h2 class="panel-title">
+                        <i class="fas fa-bell"></i> My Reminders
+                    </h2>
+
+                    <div id="remindersList" class="reminders-list"></div>
+                    <div id="emptyReminders" class="empty-state hidden">
+                        <i class="fas fa-bell"></i>
+                        <p>No reminders yet.</p>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <!-- ==========================
+         NOTIFICATIONS PANEL
+    ========================== -->
+    <div class="notification-panel" id="notificationPanel">
+        <div class="notification-header">
+            <h3><i class="fas fa-bell"></i> Notifications</h3>
+            <button class="btn btn-secondary btn-sm" id="clearNotifications">
+                Clear All
+            </button>
+        </div>
+
+        <div class="notification-body" id="notificationList"></div>
+    </div>
+
+    <!-- ==========================
+         SCRIPT
+    ========================== -->
+    <script src="app.js"></script>
+
+</body>
+</html>
