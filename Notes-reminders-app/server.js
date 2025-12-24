@@ -12,9 +12,7 @@ const PORT = process.env.PORT || 3000;
 /* ==========================
    DATA DIRECTORY (Render Disk)
 ========================== */
-const DATA_DIR = process.env.RENDER
-  ? '/data'
-  : path.join(__dirname, 'data');
+const DATA_DIR = path.join(__dirname, 'data');
 
 const NOTES_FILE = path.join(DATA_DIR, 'notes.json');
 const REMINDERS_FILE = path.join(DATA_DIR, 'reminders.json');
