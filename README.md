@@ -1,5 +1,5 @@
 Project Title
-Student Task & Note Manager App
+Student Notes & Reminders App
 
 Members
 Bless Zion Boridor
