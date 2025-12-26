@@ -1,6 +1,12 @@
 Project Title
 Student Task & Note Manager App
 
+Members
+Bless Zion Boridor
+Emman Josh Bonito
+Rouge Andrew Marfil
+
+
 Project Overview
 This project is a lightweight, full-stack CRUD (Create, Read, Update, Delete) application designed specifically for students. It serves as a central productivity hub where users can manage their academic responsibilities, brainstorm ideas via notes, and track deadlines through a reminder system. The app focuses on simplicity and efficient data organization.
 
